@@ -83,7 +83,6 @@ blockchain-based-crowdfunding-system/
 5. Run the frontend  
    npm start
 
----
 
 ## Security Considerations
 
