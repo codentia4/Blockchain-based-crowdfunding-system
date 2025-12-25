@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View User</title>
+
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/entrystyle.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/homestyle.css' %}">
+<style>
+table, th, td {
+  border:1px solid black;
+  height:30px;
+  border-collapse: collapse;
+  color:#fff;
+}
+</style>
+</head>
+<body>
+<div class="headlabel" >  <h1>Croud Funding</h1> </div>
+<div>
+    <header class="logo" >
+
+
+        <nav>
+            <ul >
+                 <li><a href="/homepage" style="color: #fff; ">Home</a></li>
+               <li><a href="/selectcamp" style="color: #fff;">View Campaigns</a></li>
+<!--                <li><a href="/userdonate" style="color: #fff;">Donate</a></li>-->
+                <li><a href="/viewuserdonation" style="color: #fff;">View User Donation</a></li>
+                <li><a href="/Login" style="color: #fff;">Logout</a></li>
+
+<!--                <li><a href="#" class="cta">Contact</a></li>-->
+            </ul>
+        </nav>
+    </header>
+    </div>
+
+<div class="login-box">
+  <h2>View User</h2>
+  <form>
+ <table style="width:100%">
+  <tr>
+    <th>Campain Name</th>
+    <th>Hash Code</th>
+    <th>Amount Donated</th>
+      <th>Date</th>
+  </tr>
+     {% for viewuser in viewuser %}
+  <tr>
+    <td>{{viewuser.cname}}</td>
+    <td>{{viewuser.hash_code}}</td>
+    <td>{{viewuser.amt_donate}}</td>
+      <td>{{viewuser.donated_on}}</td>
+  </tr>
+
+      {% endfor %}
+
+</table>
+<!--    <a href="#">-->
+<!--      <span></span>-->
+<!--      <span></span>-->
+<!--      <span></span>-->
+<!--      <span></span>-->
+<!--      Submit-->
+<!--    </a>-->
+  </form>
+</div>
+</body>
+</html>

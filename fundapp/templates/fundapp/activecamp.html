@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Active Campaign</title>
+
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/entrystyle.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/homestyle.css' %}">
+<style>
+table, th, td {
+  border:1px solid black;
+  height:30px;
+  border-collapse: collapse;
+  color:#fff;
+}
+</style>
+</head>
+<body>
+<div class="headlabel" >  <h1>Croud Funding</h1> </div>
+<div>
+    <header class="logo" >
+
+
+        <nav>
+            <ul >
+                <li><a href="/homepage" style="color: #fff;">Home</a></li>
+                <li><a href="/createcamp" style="color: #fff;">Create Campaign</a></li>
+                <li><a href="/activecamp" style="color: #fff;">Active Campaigns</a></li>
+                <li><a href="/viewuser" style="color: #fff;">View User</a></li>
+                <li><a href="/report" style="color: #fff;">Report</a></li>
+                <li><a href="/Login" style="color: #fff;">Logout</a></li>
+<!--                <li><a href="#" class="cta">Contact</a></li>-->
+            </ul>
+        </nav>
+    </header>
+    </div>
+
+<div class="login-box">
+  <h2>Active Campaign</h2>
+  <form>
+       {% csrf_token %}
+ <table style="width:100%">
+  <tr>
+    <th>Campaign Name</th>
+    <th>Target Fund </th>
+      <th>Amt-Donated</th>
+    <th>Start Date</th>
+      <th>End Date</th>
+      <th>Campaign Status</th>
+  </tr>
+     {% for camp in camp %}
+  <tr>
+    <td>{{camp.campname}}</td>
+    <td>{{camp.goalfund}}</td>
+      <td>{{camp.camp_totalamt}}</td>
+      <td>{{camp.start_date}}</td>
+      <td>{{camp.end_date}}</td>
+      <td>{{camp.camp_status}}</td>
+  </tr>
+ {% endfor %}
+
+</table>
+<!--    <a href="#">-->
+<!--      <input type="submit" value="Submit">-->
+<!--    </a>-->
+  </form>
+</div>
+</body>
+</html>

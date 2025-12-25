@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Campaign</title>
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/entrystyle.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/homestyle.css' %}">
+</head>
+<body>
+
+<div class="headlabel" >  <h1>Croud Funding</h1> </div>
+<div>
+    <header class="logo" >
+
+
+        <nav>
+            <ul >
+                <li><a href="/homepage" style="color: #fff;">Home</a></li>
+                <li><a href="/createcamp" style="color: #fff;">Create Campaign</a></li>
+                <li><a href="/activecamp" style="color: #fff;">Active Campaigns</a></li>
+                <li><a href="/viewuser" style="color: #fff;">View User</a></li>
+                <li><a href="/report" style="color: #fff;">Report</a></li>
+                <li><a href="/Login" style="color: #fff;">Logout</a></li>
+<!--                <li><a href="#" class="cta">Contact</a></li>-->
+            </ul>
+        </nav>
+    </header>
+    </div>
+
+<div class="login-box">
+  <h2>Create Campaign</h2>
+  <form action="/createcamp" method="POST">
+       {% csrf_token %}
+    <div style="color: #fff;">
+         <label for="cname">Campaign Name</label>&nbsp;&nbsp;
+      <input type="text" id="cname" name="cname" required="">
+
+        <div  style="float: right;">
+            <label for="ename">Event Name</label>
+      <input type="text" id="ename" name="ename" required="">
+
+    </div>
+    </div>
+<br/>
+          <div style="color: #fff;">
+              <label for="fgoal" >Fund Raising Goal</label>
+      <input type="text" id="fgoal" name="fgoal" required="">
+
+              <div style="float: right;">
+                  <label for="locn">Location</label>
+      <input type="text" id="locn" name="locn" required="">
+
+    </div>
+    </div>
+<br/>
+          <div style="color: #fff;">
+               <label for="stdate">Start Date</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input style="width: 170px;" type="date" id="stdate" name="stdate" >
+
+              <div  style="float: right;">
+                  <label for="enddate">End Date</label>
+      <input style="width: 170px;" type="date" id="enddate" name="enddate" >
+
+    </div>
+    </div>
+
+    <a href="#">
+       <input type="submit" value="Submit">
+    </a>
+  </form>
+</div>
+</body>
+</html>

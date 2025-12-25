@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crowding Funding</title>
+{% load static %}
+    <style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1 style="font-family:Sitka Display; font-size: 40px;background-color: #000000; color: white;">CROWD FUNDING USING BLOCKCHAIN</h1>
+</div>
+
+<div style="float:right;">
+  <form >
+      {% csrf_token %}
+
+    <div  class="center" style="font-family:Sitka Display; font-size: 25px";>
+    <a class="btn btn-secondary btn-lg"  href="/register" role="button">Register</a>
+&nbsp;&nbsp;
+     <a class="btn btn-secondary btn-lg" href="/Login" role="button">Login</a>
+    </div>
+ </form>
+
+  </div>
+
+<br/>
+
+<hr>
+<div class="center">
+ <p><span><img src="{% static 'images/bgimg1.png' %}" alt="" width="900" height="358" /><br />
+        </span><br />
+
+</div>
+<div style="text-align: justify;text-justify: inter-word; width: 70%;padding-left: 200px;">
+
+Crowdfunding is a method of raising funds from a large number of individuals or businesses. Investors
+can contribute to any project they are interested in and earn if the initiative is successful. Many
+crowdfunding sites now exist, and they accept large sums of money from investors and contributors and
+then leave them with bogus promises.
+Blockchain-based crowdfunding alters the usual approach to company finance. Generally, when people
+need to acquire funds to start a firm, they must first develop a strategy, statistical surveys, and models,
+and then offer their ideas to attract people or organisations. Banks, individual investors, and venture
+capital firms were among the sources of funding. The modern crowdfunding concept is based on three
+types of on-screen characters: the task initiator who presents the idea or venture to be financed,
+individuals or investors who invest in the idea, and a platform that connects these two characters to
+make the venture successful. It can be used to fund a wide range of start-ups and new concepts, such as
+inventive activities, medical improvements, travel, and social commercial enterprise projects.
+This work presents a practical implementation of a crowdfunding application that is secured by a latticebased cryptosystem for encryption of user data and zero-knowledge proof for the identification of
+application users. Additionally, machine learning has been used for prediction of campaign success for
+the benefit of fund contributors
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Campaign</title>
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/entrystyle.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/homestyle.css' %}">
+</head>
+<body>
+
+<div class="headlabel" >  <h1>Croud Funding</h1> </div>
+<div>
+    <header class="logo" >
+
+
+        <nav>
+            <ul >
+              <li><a href="/homepage" style="color: #fff; ">Home</a></li>
+                <li><a href="/selectcamp" style="color: #fff;">View Campaigns</a></li>
+<!--                <li><a href="/userdonate" style="color: #fff;">Donate</a></li>-->
+                <li><a href="/viewuserdonation" style="color: #fff;">View User Donation</a></li>
+                <li><a href="/Login" style="color: #fff;">Logout</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    </div>
+
+<div class="login-box">
+  <h2>Donation</h2>
+  <form action="/userdonate" method="POST">
+      {% csrf_token %}
+    <div style="color: #fff;">
+<!--         <label>{{getuserdata.id}}/label>&nbsp;&nbsp;-->
+        <input type="hidden" id="cid" name="cid" value={{getuserdata.id}}>
+         <label for="cname">Campaign Name :</label>&nbsp;&nbsp;
+
+      <input type="text"  required="" value={{getuserdata.campname}} id="cname" name="cname">
+
+        <div  style="float: right;">
+            <label for="ename">Recipient Name :</label>
+<!--             <label id="cname"></label>&nbsp;&nbsp;-->
+      <input type="text" value={{getuserdata.eventname}} required="" id="ename" name="ename">
+
+    </div>
+    </div>
+<br/>
+          <div style="color: #fff;">
+              <label for="sender">Sender Name</label>
+      <input type="text" required="" id="sender" name="sender">
+
+              <div style="float: right;">
+                  <label for="amt">Amount</label>
+      <input type="text"  required="" id="amt" name="amt">
+
+    </div>
+    </div>
+<br/>
+          <div style="color: #fff;">
+               <label for="sentdate">Date Sent</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input style="width: 170px;" type="date" required="" id="sentdate" name="sentdate">
+
+
+
+    </div>
+
+
+    <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+       <input type="submit" value="Submit">
+    </a>
+  </form>
+</div>
+</body>
+
+</html>
